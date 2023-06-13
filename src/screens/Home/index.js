@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Carteira(){
+export default function Home(){
     return (
         <View style={styles.container}>
-          <Text>Busca</Text>
+          <Text>Home</Text>
         </View>
     );
 }
@@ -17,4 +17,3 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
   });
-  

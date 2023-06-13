@@ -1,50 +1,77 @@
-import React from "react";
+import React from 'react';
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialIcons } from "@expo/vector-icons";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialIcons } from '@expo/vector-icons';
 
-import Home from "./pages/Home"
-import Busca from "./pages/Busca"
-import Perfil from "./pages/Perfil"
-import Pedidos from "./pages/Pedidos"
-import Carteira from "./pages/Carteira"
+import Home from './screens/Home';
+import Busca from './screens/Busca';
+import Perfil from './screens/Perfil';
+import Pedidos from './screens/Pedidos';
+import Carteira from './screens/Carteira';
 
 const BottomTab = createBottomTabNavigator();
 
 export default function Routes() {
-    return (
-        <NavigationContainer>
-            <BottomTab.Navigator activeColors="#333" inactiveColor="gray">
-                <BottomTab.Screen name="Home"component={Home} options={{
-                    tabBarLabel: 'Home',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialIcons name="home" color={color} size={26} />
-                    ),
-                }}
-                />
-                <BottomTab.Screen name="Home"component={Search} options={{
-                    tabBarLabel: 'Search',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialIcons name="search" color={color} size={26} />
-                    ),
-                }}
-                />
-                <BottomTab.Screen name="Profile"component={Profile} options={{
-                    tabBarLabel: 'Profile',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialIcons name="profile" color={color} size={26} />
-                    ),
-                }}
-                />
-            </BottomTab.Navigator>
-        </NavigationContainer>
-    )
+  return (
+    <NavigationContainer>
+      <BottomTab.Navigator 
+        screenOptions={{
+          tabBarActiveTintColor: 'red',
+          tabBarInactiveTintColor: 'black',
+        }}
+      >
+        <BottomTab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="home" color={color} size={26} />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name="Busca"
+          component={Busca}
+          options={{
+            tabBarLabel: 'Busca',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="search" color={color} size={26} />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name="Pedidos"
+          component={Pedidos}
+          options={{
+            tabBarLabel: 'Pedidos',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="assignment" color={color} size={26} />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name="Perfil"
+          component={Perfil}
+          options={{
+            tabBarLabel: 'Perfil',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="person" color={color} size={26} />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name="Carteira"
+          component={Carteira}
+          options={{
+            tabBarLabel: 'Carteira',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="wallet" color={color} size={26} />
+            ),
+          }}
+        />
+      </BottomTab.Navigator>
+    </NavigationContainer>
+  );
 }
-
-// const Stack = createNativeStackNavigator();
-
-// function HomeRoutes(){
-    
-// }
