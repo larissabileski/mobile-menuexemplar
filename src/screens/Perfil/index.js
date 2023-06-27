@@ -16,9 +16,6 @@ export default function Perfil({ navigation }) {
           <MaterialCommunityIcons name="bell-outline" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Notificações</Text>
-            {/* <Text style={styles.description}>
-              Minha central de notificações
-            </Text> */}
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
