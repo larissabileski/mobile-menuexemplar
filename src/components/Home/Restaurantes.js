@@ -31,7 +31,7 @@ export default function Restaurantes() {
         {restaurantes.map((restaurante) => (
           <TouchableOpacity style={styles.item} key={restaurante.id}>
             <Image
-              source={{ uri: restaurante.restaurant_url }} 
+              source={{ uri: restaurante.image }} 
               style={styles.imagem}
             />
             <View style={styles.info}>
@@ -44,7 +44,7 @@ export default function Restaurantes() {
                 <Text style={styles.estrela}>
                   {restaurante.star || 'Novo!'}
                 </Text>
-                <Text style={styles.categorias}> {restaurante.categories}</Text>
+                <Text style={styles.categorias}> {restaurante.category.title}</Text>
                 <Text style={styles.distancia}> {restaurante.distance}</Text>
               </View>
               <Text style={styles.atraso}> {restaurante.delay} </Text>

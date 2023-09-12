@@ -8,7 +8,7 @@ export default function CupomDesconto() {
       <View style={styles.divisor}>
         <View style={styles.conteudo}>
           <Image
-            source={require('../../assets/815252.png')}
+            source={require('../../assets/discount-coupon.png')}
             style={styles.logo}
           />
           <View style={styles.info}>
